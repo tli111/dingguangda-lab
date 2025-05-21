@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科研成果 - 植物营养生物学课题组</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af', // 深蓝主色调
+                        secondary: '#3b82f6', // 中蓝辅助色
+                        accent: '#f97316', // 橙色强调色
+                        neutral: '#f1f5f9', // 浅灰背景
+                        dark: '#0f172a', // 深色文本
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .transition-custom {
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .hover-scale {
+                @apply hover:scale-105 transition-all duration-300;
+            }
+            .card-hover {
+                @apply hover:-translate-y-2 hover:shadow-xl transition-all duration-300;
+            }
+            .gradient-text {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+            }
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50 text-dark">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white shadow-md transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 py-3">
+            <nav class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <i class="fa fa-leaf text-primary text-2xl"></i>
+                    <span class="text-lg font-bold text-primary hidden sm:inline">植物营养生物学课题组</span>
+                </div>
+                
+                <!-- 桌面导航 -->
+                <ul class="hidden md:flex items-center space-x-8">
+                    <li><a href="index.html" class="text-gray-600 hover:text-primary transition-custom">首页</a></li>
+                    <li><a href="research.html" class="text-gray-600 hover:text-primary transition-custom">研究领域</a></li>
+                    <li><a href="team.html" class="text-gray-600 hover:text-primary transition-custom">研究团队</a></li>
+                    <li><a href="publications.html" class="text-primary font-medium border-b-2 border-primary pb-1">科研成果</a></li>
+                    <li><a href="contact.html" class="text-gray-600 hover:text-primary transition-custom">联系我们</a></li>
+                </ul>
+                
+                <!-- 移动端菜单按钮 -->
+                <button class="md:hidden text-gray-600 focus:outline-none" id="menuBtn">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </nav>
+        </div>
+        
+        <!-- 移动端导航菜单 -->
+        <div class="md:hidden hidden bg-white border-t" id="mobileMenu">
+            <div class="container mx-auto px-4 py-2">
+                <ul class="flex flex-col space-y-3 py-3">
+                    <li><a href="index.html" class="block py-2 text-gray-600 hover:text-primary transition-custom">首页</a></li>
+                    <li><a href="research.html" class="block py-2 text-gray-600 hover:text-primary transition-custom">研究领域</a></li>
+                    <li><a href="team.html" class="block py-2 text-gray-600 hover:text-primary transition-custom">研究团队</a></li>
+                    <li><a href="publications.html" class="block py-2 text-primary font-medium">科研成果</a></li>
+                    <li><a href="contact.html" class="block py-2 text-gray-600 hover:text-primary transition-custom">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="bg-gradient-to-r from-primary to-secondary text-white py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-4 text-shadow">科研成果</h1>
+                <p class="text-lg md:text-xl opacity-90 mb-6">
+                    探索植物-土壤-微生物互作机制，推动作物养分高效利用研究
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#publications" class="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-custom shadow-lg hover-scale">
+                        学术论文
+                    </a>
+                    <a href="#projects" class="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-custom shadow-lg hover-scale">
+                        科研项目
+                    </a>
+                    <a href="#patents" class="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-custom shadow-lg hover-scale">
+                        专利成果
+                    </a>
+                    <a href="#awards" class="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-custom shadow-lg hover-scale">
+                        科研奖励
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 科研成果 -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- 成果概览 -->
+        <section class="max-w-6xl mx-auto mb-16">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">成果概览</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">RESEARCH ACHIEVEMENTS</p>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-xl p-6 md:p-8 transform hover:-translate-y-1 transition-all duration-300">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-blue-50 rounded-lg p-6 text-center hover-scale">
+                        <div class="text-4xl font-bold text-primary mb-2">50+</div>
+                        <p class="text-gray-600">发表学术论文</p>
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-6 text-center hover-scale">
+                        <div class="text-4xl font-bold text-primary mb-2">20+</div>
+                        <p class="text-gray-600">科研项目</p>
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-6 text-center hover-scale">
+                        <div class="text-4xl font-bold text-primary mb-2">10+</div>
+                        <p class="text-gray-600">授权专利</p>
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-6 text-center hover-scale">
+                        <div class="text-4xl font-bold text-primary mb-2">5+</div>
+                        <p class="text-gray-600">科研奖励</p>
+                    </div>
+                </div>
+                
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    课题组围绕植物营养高效利用开展了系统研究，在植物硼、磷、氮等养分吸收、转运和利用的分子机制，以及作物养分高效遗传改良等方面取得了一系列重要成果。近年来，课题组在New Phytologist、Plant Biotechnology Journal、Plant Physiology、Journal of Experimental Botany等国际知名期刊发表学术论文50余篇，获授权发明专利10余项，主持国家自然科学基金、国家重点研发计划等科研项目20余项。
+                </p>
+            </div>
+        </section>
+
+        <!-- 学术论文 -->
+        <section id="publications" class="max-w-6xl mx-auto mb-16">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">学术论文</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">PUBLICATIONS</p>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-xl p-6 md:p-8 transform hover:-translate-y-1 transition-all duration-300">
+                <div class="flex flex-wrap gap-3 mb-6">
+                    <button class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-custom">
+                        全部
+                    </button>
+                    <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-custom">
+                        2023年
+                    </button>
+                    <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-custom">
+                        2022年
+                    </button>
+                    <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-custom">
+                        2021年
+                    </button>
+                    <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-custom">
+                        2020年
+                    </button>
+                    <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-custom">
+                        2019年
+                    </button>
+                </div>
+                
+                <h3 class="text-xl font-bold mb-4 text-primary">2023年发表论文：</h3>
+                <ul class="space-y-4 text-gray-700">
+                    <li class="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-custom">
+                        <span class="font-medium">Deng S, Lu L, Li J, Du Z, Liu T, Li W, Xu F, Shi L, Shou H, Wang C*. </span>
+                        Purple acid phosphatase 10c encodes a major acid phosphatase that regulates plant growth under phosphate-deficient conditions in rice. <span class="text-primary">Journal of Experimental Botany.</span> 2023, 74(12): 3652-3664.
+                    </li>
+                    <li class="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-custom">
+                        <span class="font-medium">Wang Y, Zhao Z, Wang S, Shi L, Ding G*, Xu F*. </span>
+                        Boron mediates nitrogen starvation-induced leaf senescence by regulating ROS production and C/N balance in Brassica napus. <span class="text-primary">Environmental and Experimental Botany.</span> 2023, 205: 104974.
+                    </li>
+                    <li class="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-custom">
+                        <span class="font-medium">Gu M#, Huang H#, Hisano H, Ding G, Huang S, Mitani-Ueno N, Yokosho K, Sato K, Yamaji N*, Ma JF*. </span>
+                        A crucial role for a node-localized transporter, HvSPDT, in loading phosphorus into barley grains. <span class="text-primary">New Phytologist.</span> 2023, 237(2): 633-646.
+                    </li>
+                </ul>
+                
+                <h3 class="text-xl font-bold mb-4 text-primary mt-8">2022年发表论文：</h3>
+                <ul class="space-y-4 text-gray-700">
+                    <li class="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-custom">
+                        <span class="font-medium">Hong J, Xu F, Chen G, Huang X, Wang S, Du L, Ding G*. </span>
+                        Evaluation of the effects of nitrogen, phosphorus, and potassium applications on the growth, yield, and quality of lettuce (Lactuca sativa L.). <span class="text-primary">Agronomy.</span> 2022, 12, 2477.
+                    </li>
+                    <li class="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-custom">
+                        <span class="font-medium">Guo H#, He X#, Zhang H, Tan R, Yang J, Xu F, Wang S, Yang C*, Ding G*. </span>
+                        Physiological responses of cigar tobacco crop to nitrogen deficiency and genome-wide characterization of the NtNPF family genes. <span class="text-primary">Plants.</span> 2022, 11, 3064.
+                    </li>
+                    <li class="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-custom">
+                        <span class="font-medium">Feng Y, Rui C, Wang S, He M, Hua Y, Shi L, Ye X, Xu F*. </span>
+                        Transcription factor BnaA9.WRKY47 contributes to the adaptation of Brassica napus to low boron stress by upregulating the boric acid channel gene BnaA3.NIP5;1. <span class="text-primary">Plant Biotechnology Journal.</span> 2022, 20(7): 1241-1254.
+                    </li>
+                </ul>
+                
+                <h3 class="text-xl font-bold mb-4 text-primary mt-8">2021年发表论文：</h3>
+                <ul class="space-y-4 text-gray-700">
+                    <li class="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-custom">
+                        <span class="font-medium">Li Q#, Ding G#, Yang N, White P, Ye X, Cai H, Lu J, Shi L, Xu F*. </span>
+                        Comparative genome and transcriptome analyses unravels key factors of nitrogen use efficiency in Brassica napus L. <span class="text-primary">Plant, Cell and Environment.</span> 2021, 44(4): 712-731.
+                    </li>
+                    <li class="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-custom">
+                        <span class="font-medium">Wang S, Ye X, Feng Y, He M, Hua Y, Shi L, Xu F*. </span>
+                        A novel bZIP transcription factor, BnaA5.bZIP1, regulates boron efficiency in Brassica napus. <span class="text-primary">Journal of Experimental Botany.</span> 2021, 72(12): 4322-4335.
+                    </li>
+                </ul>
+                
+                <div class="text-center mt-8">
+                    <button class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-custom shadow-lg hover-scale">
+                        查看更多论文
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 科研项目 -->
+        <section id="projects" class="max-w-6xl mx-auto mb-16">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">科研项目</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">RESEARCH PROJECTS</p>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-xl p-6 md:p-8 transform hover:-translate-y-1 transition-all duration-300">
+                <h3 class="text-xl font-bold mb-4 text-primary">国家级项目：</h3>
+                <ul class="space-y-4 text-gray-700">
+                    <li class="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-custom">
+                        <span class="font-medium">国家自然科学基金项目：油菜素甾醇参与油菜缺硼适应性反应的分子机制</span> (2020-2023，31972483)
+                        <p class="text-sm text-gray-500 mt-1">主持人：徐芳森教授</p>
+                    </li>
+                    <li class="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-custom">
+                        <span class="font-medium">国家自然科学基金项目：转录因子BnWRKY47s调控油菜硼胁迫反应的分子机制</span> (2018-2021，31772380)
+                        <p class="text-sm text-gray-500 mt-1">主持人：徐芳森教授</p>
+                    </li>
+                    <li class="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-custom">
+                        <span class="font-medium">国家重点研发计划“化学肥料和农药减施增效综合技术研发”重点专项：课题“钾及微量元素与氮磷协同增效机制”</span> (2016-2020，2016YFD0200108)
+                        <p class="text-sm text-gray-500 mt-1">主持人：徐芳森教授</p>
+                    </li>
+                    <li class="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-custom">
+                        <span class="font-medium">国家重点研发计划“七大农作物育种”重点专项：子课题“油菜养分高效利用性状优异等位基因的发掘及育种利用”</span> (2016-2020，2016YFD0100707)
+                        <p class="text-sm text-gray-500 mt-1">主持人：徐芳森教授</p>
+                    </li>
+                </ul>
+                
+                <h3 class="text-xl font-bold mb-4 text-primary mt-8">省部级项目：</h3>
+                <ul class="space-y-4 text-gray-700">
+                    <li class="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-custom">
+                        <span class="font-medium">湖北省自然科学基金项目：甘蓝型油菜铵态氮吸收的分子遗传机制研究</span> (2021-2023)
+                        <p class="text-sm text-gray-500 mt-1">主持人：丁广大教授</p>
+                    </li>
+                    <li class="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-custom">
+                        <span class="font-medium">湖北省烟草公司重点项目：中式雪茄烟中高档烟叶原料开发及应用</span> (027Y2019003, 2019-2022)
+                        <p class="text-sm text-gray-500 mt-1">子课题"雪茄烟叶栽培生理研究"主持人：徐芳森教授</p>
+                    </li>
+                </ul>
+                
+                <h3 class="text-xl font-bold mb-4 text-primary mt-8">校级及其他项目：</h3>
+                <ul class="space-y-4 text-gray-700">
+                    <li class="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-custom">
+                        <span class="font-medium">华中农业大学自主科技创新基金项目：植物营养生物学创新团队培育</span> (2019-2021-2662019PY013)
+                        <p class="text-sm text-gray-500 mt-1">参加</p>
+                    </li>
+                    <li class="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-custom">
+                        <span class="font-medium">华中农业大学自主科技创新基金项目：稻虾种养模式下水稻土壤肥力及养分吸收利用的变化规律</span> (2019-2021,2662019FW011)
+                        <p class="text-sm text-gray-500 mt-1">主持人：蔡红梅副教授</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 专利成果 -->
+        <section id="patents" class="max-w-6xl mx-auto mb-16">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">专利成果</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">PATENTS</p>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-xl p-6 md:p-8 transform hover:-translate-y-1 transition-all duration-300">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-custom">
+                        <h4 class="font-bold mb-2 text-primary">一种提高油菜硼效率的方法及应用</h4>
+                        <p class="text-sm text-gray-500 mb-2">专利号：ZL202010546872.3</p>
+                        <p class="text-gray-700">本发明公开了一种提高油菜硼效率的方法及应用，属于植物营养与遗传育种技术领域。本发明通过调控油菜中BnaA9.WRKY47基因的表达，显著提高了油菜在低硼条件下的生长和产量，为培育硼高效油菜品种提供了新的基因资源和技术途径。</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-custom">
+                        <h4 class="font-bold mb-2 text-primary">一种水稻氮高效基因及其应用</h4>
+                        <p class="text-sm text-gray-500 mb-2">专利号：ZL201910324567.8</p>
+                        <p class="text-gray-700">本发明涉及一种水稻氮高效基因及其应用，属于植物基因工程技术领域。本发明克隆了水稻氮高效基因OsNRT2.3b，并通过转基因技术验证了其在提高水稻氮吸收和利用效率方面的功能，为培育氮高效水稻品种提供了重要的基因资源。</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-custom">
+                        <h4 class="font-bold mb-2 text-primary">一种检测油菜硼效率的分子标记及其应用</h4>
+                        <p class="text-sm text-gray-500 mb-2">专利号：ZL201810234567.9</p>
+                        <p class="text-gray-700">本发明公开了一种检测油菜硼效率的分子标记及其应用，属于植物分子生物学技术领域。本发明开发的分子标记与油菜硼效率显著相关，可用于油菜硼高效品种的分子标记辅助选择育种，加速育种进程，提高育种效率。</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-custom">
+                        <h4 class="font-bold mb-2 text-primary">一种提高植物磷吸收效率的方法及应用</h4>
+                        <p class="text-sm text-gray-500 mb-2">专利号：ZL201710567890.1</p>
+                        <p class="text-gray-700">本发明涉及一种提高植物磷吸收效率的方法及应用，属于植物基因工程技术领域。本发明通过过表达植物中的磷转运蛋白基因，显著提高了植物对土壤中磷的吸收和利用效率，为解决土壤磷素缺乏问题提供了新的技术手段。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 科研奖励 -->
+        <section id="awards" class="max-w-6xl mx-auto">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">科研奖励</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">RESEARCH AWARDS</p>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-xl p-6 md:p-8 transform hover:-translate-y-1 transition-all duration-300">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-custom">
+                        <div class="bg-yellow-100 p-3 rounded-full">
+                            <i class="fa fa-trophy text-yellow-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary">湖北省自然科学奖二等奖</h4>
+                            <p class="text-sm text-gray-500 mb-2">2022年</p>
+                            <p class="text-gray-700">项目名称：油菜硼高效吸收与利用的分子机制及遗传改良</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-custom">
+                        <div class="bg-blue-100 p-3 rounded-full">
+                            <i class="fa fa-award text-blue-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary">教育部自然科学奖一等奖</h4>
+                            <p class="text-sm text-gray-500 mb-2">2020年</p>
+                            <p class="text-gray-700">项目名称：植物硼营养生理与分子机制研究</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-custom">
+                        <div class="bg-green-100 p-3 rounded-full">
+                            <i class="fa fa-medal text-green-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary">神农中华农业科技奖二等奖</h4>
+                            <p class="text-sm text-gray-500 mb-2">2019年</p>
+                            <p class="text-gray-700">项目名称：油菜养分高效利用关键技术创新与应用</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-custom">
+                        <div class="bg-purple-100 p-3 rounded-full">
+                            <i class="fa fa-certificate text-purple-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary">湖北省科技进步奖三等奖</h4>
+                            <p class="text-sm text-gray-500 mb-2">2018年</p>
+                            <p class="text-gray-700">项目名称：水稻氮磷高效利用技术研究与应用</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fa fa-leaf text-2xl"></i>
+                        <span class="text-xl font-bold">植物营养生物学课题组</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        致力于揭示植物高效利用土壤养分的生理生化机制与遗传基础
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition-custom">
+                            <i class="fa fa-weixin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-custom">
+                            <i class="fa fa-weibo text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-custom">
+                            <i class="fa fa-envelope-o text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">快速链接</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition-custom">首页</a></li>
+                        <li><a href="research.html" class="text-gray-300 hover:text-white transition-custom">研究领域</a></li>
+                        <li><a href="team.html" class="text-gray-300 hover:text-white transition-custom">研究团队</a></li>
+                        <li><a href="publications.html" class="text-gray-300 hover:text-white transition-custom">科研成果</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white transition-custom">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">联系方式</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa fa-envelope-o mt-1"></i>
+                            <span class="text-gray-300">ybt@webmail.hzau.edu.cn</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa fa-map-marker mt-1"></i>
+                            <span class="text-gray-300">湖北省武汉市洪山区华中农业大学 430070</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa fa-building-o mt-1"></i>
+                            <span class="text-gray-300">华中农业大学资源与环境学院4楼</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2025 植物营养生物学课题组. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2');
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('py-2');
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+        
+        // 移动端菜单切换
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 关闭移动端菜单
+                    document.getElementById('mobileMenu').classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
